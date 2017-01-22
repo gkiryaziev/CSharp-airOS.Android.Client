@@ -8,7 +8,8 @@ using ConnectionManager;
 
 namespace UbntClient
 {
-    [Activity(Label = "Ubnt Client", MainLauncher = true, Icon = "@drawable/WiFi")]
+    [Activity(Label = "Ubnt Client", MainLauncher = true, Icon = "@drawable/WiFi",
+        Theme = "@style/MyCustomTheme")]
     public class MainActivity : Activity
     {
         TextView lblBaseSSID, lblApMac, lblWlanIPAddress, lblFrequency, lblChannel,
