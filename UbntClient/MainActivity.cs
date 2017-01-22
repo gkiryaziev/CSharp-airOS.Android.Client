@@ -11,8 +11,14 @@ namespace UbntClient
     [Activity(Label = "Ubnt Client", MainLauncher = true, Icon = "@drawable/WiFi")]
     public class MainActivity : Activity
     {
-        TextView lblBaseSSID, lblApMac, lblWlanIPAddress, lblFrequency, lblChannel;
+        TextView lblBaseSSID, lblApMac, lblWlanIPAddress, lblFrequency, lblChannel,
+            lblACKTimeout, lblTxRate, lblRxRate, lblUptime,
+            lblSignal, lblNoise, lblCCQ;
+
+        Switch swSignal, swNoise, swCCQ;
+
         Button btnConnect, btnDisconnect, btnSettings;
+
         Timer timerMain;
 
         // client
@@ -32,6 +38,21 @@ namespace UbntClient
             lblWlanIPAddress = FindViewById<TextView>(Resource.Id.lblWlanIPAddress);
             lblFrequency = FindViewById<TextView>(Resource.Id.lblFrequency);
             lblChannel = FindViewById<TextView>(Resource.Id.lblChannel);
+            lblACKTimeout = FindViewById<TextView>(Resource.Id.lblACKTimeout);
+            lblTxRate = FindViewById<TextView>(Resource.Id.lblTxRate);
+            lblRxRate = FindViewById<TextView>(Resource.Id.lblRxRate);
+            lblUptime = FindViewById<TextView>(Resource.Id.lblUptime);
+            lblSignal = FindViewById<TextView>(Resource.Id.lblSignal);
+            lblNoise = FindViewById<TextView>(Resource.Id.lblNoise);
+            lblCCQ = FindViewById<TextView>(Resource.Id.lblCCQ);
+
+            // Switch
+            swSignal = FindViewById<Switch>(Resource.Id.swSignal);
+            swNoise = FindViewById<Switch>(Resource.Id.swNoise);
+            swCCQ = FindViewById<Switch>(Resource.Id.swCCQ);
+            swSignal.Checked = true;
+            swNoise.Checked = false;
+            swCCQ.Checked = false;
 
             // Button
             btnConnect = FindViewById<Button>(Resource.Id.btnConnect);
@@ -83,30 +104,30 @@ namespace UbntClient
 
         private void TimerMain_Elapsed(object sender, ElapsedEventArgs e)
         {
-            //RunOnUiThread(() =>
-            //    {
-            //        if (chkBoxSignal.Checked)
-            //        {
-            //            int signal = ***REMOVED***Client.GetSignal();
-            //            cirPbSignal.Value = signal + 100;
-            //            cirPbSignal.Text = signal.ToString();
-            //        }
+            RunOnUiThread(() =>
+                {
+                    if (swSignal.Checked)
+                    {
+                        int signal = ***REMOVED***Client.GetSignal();
+                        //cirPbSignal.Value = signal + 100;
+                        lblSignal.Text = signal.ToString();
+                    }
 
-            //        if (chkBoxNoise.Checked)
-            //        {
-            //            int noise = ***REMOVED***Client.GetNoiseFloor();
-            //            cirPbNoise.Value = noise + 100;
-            //            cirPbNoise.Text = noise.ToString();
-            //        }
+                    if (swNoise.Checked)
+                    {
+                        int noise = ***REMOVED***Client.GetNoiseFloor();
+                        //cirPbNoise.Value = noise + 100;
+                        lblNoise.Text = noise.ToString();
+                    }
 
-            //        if (chkBoxCCQ.Checked)
-            //        {
-            //            int ccq = ***REMOVED***Client.GetTransmitCCQ();
-            //            cirPbCCQ.Value = ccq;
-            //            cirPbCCQ.Text = ccq.ToString();
-            //        }
-            //    }
-            //);
+                    if (swCCQ.Checked)
+                    {
+                        int ccq = ***REMOVED***Client.GetTransmitCCQ();
+                        //cirPbCCQ.Value = ccq;
+                        lblCCQ.Text = ccq.ToString();
+                    }
+                }
+            );
         }
 
         //---------------------------------
@@ -119,10 +140,10 @@ namespace UbntClient
             lblWlanIPAddress.Text = ***REMOVED***Client.GetWlanIpAddress();
             lblFrequency.Text = ***REMOVED***Client.GetFrequency() + " MHz";
             lblChannel.Text = ***REMOVED***Client.GetChannel();
-            //lblACKTimeout.Text = ***REMOVED***Client.GetAckTimeout();
-            //lblTxRate.Text = ***REMOVED***Client.GetTxRate() + " Mbps";
-            //lblRxRate.Text = ***REMOVED***Client.GetRxRate() + " Mbps";
-            //lblUptime.Text = ***REMOVED***Client.GetUptimeFormatted();
+            lblACKTimeout.Text = ***REMOVED***Client.GetAckTimeout();
+            lblTxRate.Text = ***REMOVED***Client.GetTxRate() + " Mbps";
+            lblRxRate.Text = ***REMOVED***Client.GetRxRate() + " Mbps";
+            lblUptime.Text = ***REMOVED***Client.GetUptimeFormatted();
         }
     }
 }
