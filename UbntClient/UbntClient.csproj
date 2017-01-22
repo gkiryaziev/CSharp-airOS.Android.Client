@@ -78,6 +78,15 @@
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\WiFi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectionManager\ConnectionManager.csproj">
+      <Project>{358b25a5-b35e-4e0f-951c-b1a0cf8a2d10}</Project>
+      <Name>ConnectionManager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
