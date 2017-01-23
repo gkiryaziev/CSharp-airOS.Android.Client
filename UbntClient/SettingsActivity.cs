@@ -3,7 +3,7 @@ using Android.OS;
 
 namespace UbntClient
 {
-    [Activity(Label = "Settings")]
+    [Activity(Label = "@string/settingsActivity")]
     public class SettingsActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -11,7 +11,7 @@ namespace UbntClient
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-             SetContentView (Resource.Layout.Settings);
+            SetContentView(Resource.Layout.Settings);
         }
     }
 }

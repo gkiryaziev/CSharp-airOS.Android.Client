@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">UbntClient</string>
+  <!-- Application -->
+  <string name="appName">Ubnt Client</string>
+  <!-- Activity -->
+  <string name="mainActivity">Status</string>
+  <string name="settingsActivity">Settings</string>
+  <!-- Button -->
+  <string name="btnConnect">Connect</string>
+  <string name="btnDisconnect">Disconnect</string>
+  <string name="btnSettings">Settings</string>
+  <!-- TextView -->
+  <string name="lblBaseSSID">SSID</string>
+  <string name="lblApMac">MAC</string>
+  <string name="lblWlanIPAddress">Wlan IP</string>
+  <string name="lblFrequency">Frequency</string>
+  <string name="lblChannel">Channel</string>
+  <string name="lblACKTimeout">ACK</string>
+  <string name="lblTxRate">Tx Rate</string>
+  <string name="lblRxRate">Rx Rate</string>
+  <string name="lblUptime">Uptime</string>
+  <!-- Switch -->
+  <string name="swOn">ON</string>
+  <string name="swOff">OFF</string>
+  <!-- TextView -->
+  <string name="lblSignal">Signal/dBm</string>
+  <string name="lblNoise">Noise/dBm</string>
+  <string name="lblCCQ">CCQ/%</string>
 </resources>

@@ -8,7 +8,7 @@ using ConnectionManager;
 
 namespace UbntClient
 {
-    [Activity(Label = "Ubnt Client", MainLauncher = true, Icon = "@drawable/WiFi",
+    [Activity(Label = "@string/mainActivity", MainLauncher = true, Icon = "@drawable/WiFi",
         Theme = "@style/MyCustomTheme")]
     public class MainActivity : Activity
     {
@@ -31,7 +31,7 @@ namespace UbntClient
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            SetContentView (Resource.Layout.Main);
+            SetContentView(Resource.Layout.Main);
 
             // TextView
             lblBaseSSID = FindViewById<TextView>(Resource.Id.lblBaseSSID);
