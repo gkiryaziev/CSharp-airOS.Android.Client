@@ -3,302 +3,302 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="horizontal"
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="60">
+    <Button
+        android:id="@+id/btnConnect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="60">
-        <Button
-            android:id="@+id/btnConnect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btnConnect"
-            android:layout_weight="20"
-            android:textSize="12sp" />
-        <Button
-            android:id="@+id/btnDisconnect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btnDisconnect"
-            android:layout_weight="20"
-            android:textSize="12sp" />
-        <Button
-            android:id="@+id/btnSettings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btnSettings"
-            android:layout_weight="20"
-            android:textSize="12sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:text="@string/btnConnect"
+        android:layout_weight="20"
+        android:textSize="12sp" />
+    <Button
+        android:id="@+id/btnDisconnect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="40"
-        android:layout_marginTop="10sp">
-        <TextView
-            android:text="@string/lblBaseSSID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="23"
-            android:textSize="18sp"
-            android:paddingLeft="15sp" />
-        <TextView
-            android:text="lblBaseSSID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblBaseSSID"
-            android:layout_weight="17"
-            android:textSize="18sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:text="@string/btnDisconnect"
+        android:layout_weight="20"
+        android:textSize="12sp" />
+    <Button
+        android:id="@+id/btnSettings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="40">
-        <TextView
-            android:text="@string/lblApMac"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="23"
-            android:textSize="18sp"
-            android:paddingLeft="15sp" />
-        <TextView
-            android:text="lblApMac"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblApMac"
-            android:layout_weight="17"
-            android:textSize="18sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:text="@string/btnSettings"
+        android:layout_weight="20"
+        android:textSize="12sp" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="40"
+      android:layout_marginTop="10sp">
+    <TextView
+        android:text="@string/lblBaseSSID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="40">
-        <TextView
-            android:text="@string/lblWlanIPAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="23"
-            android:textSize="18sp"
-            android:paddingLeft="15sp" />
-        <TextView
-            android:text="lblWlanIPAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblWlanIPAddress"
-            android:layout_weight="17"
-            android:textSize="18sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:layout_weight="23"
+        android:textSize="18sp"
+        android:paddingLeft="15sp" />
+    <TextView
+        android:text="lblBaseSSID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="40">
-        <TextView
-            android:text="@string/lblFrequency"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="23"
-            android:textSize="18sp"
-            android:paddingLeft="15sp" />
-        <TextView
-            android:text="lblFrequency"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblFrequency"
-            android:layout_weight="17"
-            android:textSize="18sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/lblBaseSSID"
+        android:layout_weight="17"
+        android:textSize="18sp" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="40">
+    <TextView
+        android:text="@string/lblApMac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="40">
-        <TextView
-            android:text="@string/lblChannel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="23"
-            android:textSize="18sp"
-            android:paddingLeft="15sp" />
-        <TextView
-            android:text="lblChannel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblChannel"
-            android:layout_weight="17"
-            android:textSize="18sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:layout_weight="23"
+        android:textSize="18sp"
+        android:paddingLeft="15sp" />
+    <TextView
+        android:text="lblApMac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="40">
-        <TextView
-            android:text="@string/lblACKTimeout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="23"
-            android:textSize="18sp"
-            android:paddingLeft="15sp" />
-        <TextView
-            android:text="lblACKTimeout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblACKTimeout"
-            android:layout_weight="17"
-            android:textSize="18sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/lblApMac"
+        android:layout_weight="17"
+        android:textSize="18sp" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="40">
+    <TextView
+        android:text="@string/lblWlanIPAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="40">
-        <TextView
-            android:text="@string/lblTxRate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="23"
-            android:textSize="18sp"
-            android:paddingLeft="15sp" />
-        <TextView
-            android:text="lblTxRate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblTxRate"
-            android:layout_weight="17"
-            android:textSize="18sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:layout_weight="23"
+        android:textSize="18sp"
+        android:paddingLeft="15sp" />
+    <TextView
+        android:text="lblWlanIPAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="40">
-        <TextView
-            android:text="@string/lblRxRate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="23"
-            android:textSize="18sp"
-            android:paddingLeft="15sp" />
-        <TextView
-            android:text="lblRxRate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblRxRate"
-            android:layout_weight="17"
-            android:textSize="18sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/lblWlanIPAddress"
+        android:layout_weight="17"
+        android:textSize="18sp" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="40">
+    <TextView
+        android:text="@string/lblFrequency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="40">
-        <TextView
-            android:text="@string/lblUptime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="23"
-            android:textSize="18sp"
-            android:paddingLeft="15sp" />
-        <TextView
-            android:text="lblUptime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblUptime"
-            android:layout_weight="17"
-            android:textSize="18sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:layout_weight="23"
+        android:textSize="18sp"
+        android:paddingLeft="15sp" />
+    <TextView
+        android:text="lblFrequency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="60"
-        android:layout_marginTop="20sp">
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/swSignal"
-            android:checked="true"
-            android:layout_weight="20"
-            android:textOn="@string/swOn"
-            android:textOff="@string/swOff" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/swNoise"
-            android:checked="false"
-            android:layout_weight="20"
-            android:textOn="@string/swOn"
-            android:textOff="@string/swOff" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/swCCQ"
-            android:checked="false"
-            android:layout_weight="20"
-            android:textOn="@string/swOn"
-            android:textOff="@string/swOff" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/lblFrequency"
+        android:layout_weight="17"
+        android:textSize="18sp" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="40">
+    <TextView
+        android:text="@string/lblChannel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="60"
-        android:layout_marginTop="10sp">
-        <TextView
-            android:text="@string/lblSignal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:textSize="18sp"
-            android:gravity="center_horizontal" />
-        <TextView
-            android:text="@string/lblNoise"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:textSize="18sp"
-            android:gravity="center_horizontal" />
-        <TextView
-            android:text="@string/lblCCQ"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:textSize="18sp"
-            android:gravity="center_horizontal" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+        android:layout_weight="23"
+        android:textSize="18sp"
+        android:paddingLeft="15sp" />
+    <TextView
+        android:text="lblChannel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="60"
-        android:layout_marginTop="10sp">
-        <TextView
-            android:text="-100"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblSignal"
-            android:layout_weight="20"
-            android:textSize="20sp"
-            android:gravity="center_horizontal" />
-        <TextView
-            android:text="-100"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblNoise"
-            android:layout_weight="20"
-            android:textSize="20sp"
-            android:gravity="center_horizontal" />
-        <TextView
-            android:text="100"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblCCQ"
-            android:layout_weight="20"
-            android:textSize="20sp"
-            android:gravity="center_horizontal" />
-    </LinearLayout>
+        android:id="@+id/lblChannel"
+        android:layout_weight="17"
+        android:textSize="18sp" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="40">
+    <TextView
+        android:text="@string/lblACKTimeout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="23"
+        android:textSize="18sp"
+        android:paddingLeft="15sp" />
+    <TextView
+        android:text="lblACKTimeout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblACKTimeout"
+        android:layout_weight="17"
+        android:textSize="18sp" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="40">
+    <TextView
+        android:text="@string/lblTxRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="23"
+        android:textSize="18sp"
+        android:paddingLeft="15sp" />
+    <TextView
+        android:text="lblTxRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblTxRate"
+        android:layout_weight="17"
+        android:textSize="18sp" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="40">
+    <TextView
+        android:text="@string/lblRxRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="23"
+        android:textSize="18sp"
+        android:paddingLeft="15sp" />
+    <TextView
+        android:text="lblRxRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblRxRate"
+        android:layout_weight="17"
+        android:textSize="18sp" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="40">
+    <TextView
+        android:text="@string/lblUptime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="23"
+        android:textSize="18sp"
+        android:paddingLeft="15sp" />
+    <TextView
+        android:text="lblUptime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblUptime"
+        android:layout_weight="17"
+        android:textSize="18sp" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="60"
+      android:layout_marginTop="20sp">
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/swSignal"
+        android:checked="true"
+        android:layout_weight="20"
+        android:textOn="@string/swOn"
+        android:textOff="@string/swOff" />
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/swNoise"
+        android:checked="false"
+        android:layout_weight="20"
+        android:textOn="@string/swOn"
+        android:textOff="@string/swOff" />
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/swCCQ"
+        android:checked="false"
+        android:layout_weight="20"
+        android:textOn="@string/swOn"
+        android:textOff="@string/swOff" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="60"
+      android:layout_marginTop="10sp">
+    <TextView
+        android:text="@string/lblSignal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:textSize="18sp"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:text="@string/lblNoise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:textSize="18sp"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:text="@string/lblCCQ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:textSize="18sp"
+        android:gravity="center_horizontal" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="60"
+      android:layout_marginTop="10sp">
+    <TextView
+        android:text="-100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblSignal"
+        android:layout_weight="20"
+        android:textSize="20sp"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:text="-100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblNoise"
+        android:layout_weight="20"
+        android:textSize="20sp"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:text="100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblCCQ"
+        android:layout_weight="20"
+        android:textSize="20sp"
+        android:gravity="center_horizontal" />
+  </LinearLayout>
 </LinearLayout>

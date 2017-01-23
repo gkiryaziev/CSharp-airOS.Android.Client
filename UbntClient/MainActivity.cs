@@ -5,11 +5,17 @@ using Android.Widget;
 using System;
 using System.Timers;
 using ConnectionManager;
+using Android.Content.PM;
+using Android.Views;
 
 namespace UbntClient
 {
-    [Activity(Label = "@string/mainActivity", MainLauncher = true, Icon = "@drawable/WiFi",
-        Theme = "@style/MyCustomTheme")]
+    [Activity(
+        Label = "@string/appName",
+        MainLauncher = true,
+        Icon = "@drawable/WiFi",
+        Theme = "@style/MyCustomTheme",
+        ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         TextView lblBaseSSID, lblApMac, lblWlanIPAddress, lblFrequency, lblChannel,
@@ -32,6 +38,9 @@ namespace UbntClient
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+
+            // keep screen on
+            this.Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
 
             // TextView
             lblBaseSSID = FindViewById<TextView>(Resource.Id.lblBaseSSID);
@@ -65,44 +74,75 @@ namespace UbntClient
             btnSettings.Click += BtnSettings_Click;
         }
 
+        //---------------------------------
+        // OnStop
+        //---------------------------------
         protected override void OnStop()
         {
             base.OnStop();
+
+            if (timerMain != null)
+            {
+                timerMain.Dispose();
+                timerMain = null;
+            }
+
             sshClient.Close();
         }
 
+        //---------------------------------
+        // Button Connect Event
+        //---------------------------------
         private void BtnConnect_Click(object sender, EventArgs e)
         {
-            if (sshClient.Open("***REMOVED***", 22, "***REMOVED***", "***REMOVED***"))
+            try
             {
-                ***REMOVED***Client.SetSSHClient(sshClient);
-                GetStatus();
-                if (timerMain == null)
+                if (sshClient.Open("***REMOVED***", 22, "***REMOVED***", "***REMOVED***"))
                 {
-                    timerMain = new Timer();
-                    timerMain.Interval = 2000;
-                    timerMain.Elapsed += TimerMain_Elapsed;
-                    timerMain.Start();
+                    ***REMOVED***Client.SetSSHClient(sshClient);
+                    GetStatus();
+                    if (timerMain == null)
+                    {
+                        timerMain = new Timer();
+                        timerMain.Interval = 2000;
+                        timerMain.Elapsed += TimerMain_Elapsed;
+                        timerMain.Start();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(this, "Check WIFI connection.", ToastLength.Short).Show();
+                return;
             }
         }
 
+        //---------------------------------
+        // Button Disconnect Event
+        //---------------------------------
         private void BtnDisconnect_Click(object sender, EventArgs e)
         {
             if (timerMain != null)
             {
-                sshClient.Close();
                 timerMain.Dispose();
                 timerMain = null;
             }
+
+            sshClient.Close();
         }
 
+        //---------------------------------
+        // Button Settings Event
+        //---------------------------------
         private void BtnSettings_Click(object sender, EventArgs e)
         {
             Intent i = new Intent(this, typeof(SettingsActivity));
             StartActivity(i);
         }
 
+        //---------------------------------
+        // Main Timer Event
+        //---------------------------------
         private void TimerMain_Elapsed(object sender, ElapsedEventArgs e)
         {
             RunOnUiThread(() =>
