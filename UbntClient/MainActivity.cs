@@ -1,12 +1,12 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
+using Android.Views;
 using Android.Widget;
+using ConnectionManager;
 using System;
 using System.Timers;
-using ConnectionManager;
-using Android.Content.PM;
-using Android.Views;
 
 namespace UbntClient
 {
@@ -30,12 +30,14 @@ namespace UbntClient
 
         // client
         SSHClient sshClient = new SSHClient();
-        ConnectionManager.UbntClient ***REMOVED***Client = new ConnectionManager.UbntClient();
+        ConnectionManager.UbntClient ubntClient = new ConnectionManager.UbntClient();
 
+        //---------------------------------
+        // OnCreate
+        //---------------------------------
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
@@ -89,18 +91,18 @@ namespace UbntClient
 
             sshClient.Close();
 
-            lblBaseSSID.Text = "";
-            lblApMac.Text = "";
-            lblWlanIPAddress.Text = "";
-            lblFrequency.Text = "";
-            lblChannel.Text = "";
-            lblACKTimeout.Text = "";
-            lblTxRate.Text = "";
-            lblRxRate.Text = "";
-            lblUptime.Text = "";
-            lblSignal.Text = "";
-            lblNoise.Text = "";
-            lblCCQ.Text = "";
+            //lblBaseSSID.Text = "";
+            //lblApMac.Text = "";
+            //lblWlanIPAddress.Text = "";
+            //lblFrequency.Text = "";
+            //lblChannel.Text = "";
+            //lblACKTimeout.Text = "";
+            //lblTxRate.Text = "";
+            //lblRxRate.Text = "";
+            //lblUptime.Text = "";
+            lblSignal.Text = "0";
+            lblNoise.Text = "0";
+            lblCCQ.Text = "0";
         }
 
         //---------------------------------
@@ -108,16 +110,25 @@ namespace UbntClient
         //---------------------------------
         private void BtnConnect_Click(object sender, EventArgs e)
         {
+            // read settings
+            var settings = Application.Context.GetSharedPreferences("Settings", FileCreationMode.Private);
+            var host = settings.GetString("Host", "192.168.1.1");
+            var port = settings.GetInt("Port", 22);
+            var login = settings.GetString("Login", "admin");
+            var password = settings.GetString("Password", "admin");
+            var interval = settings.GetInt("Interval", 2000);
+
+            // try connect
             try
             {
-                if (sshClient.Open("***REMOVED***", 22, "***REMOVED***", "***REMOVED***"))
+                if (sshClient.Open(host, port, login, password))
                 {
-                    ***REMOVED***Client.SetSSHClient(sshClient);
+                    ubntClient.SetSSHClient(sshClient);
                     GetStatus();
                     if (timerMain == null)
                     {
                         timerMain = new Timer();
-                        timerMain.Interval = 2000;
+                        timerMain.Interval = interval;
                         timerMain.Elapsed += TimerMain_Elapsed;
                         timerMain.Start();
                     }
@@ -162,21 +173,21 @@ namespace UbntClient
                 {
                     if (swSignal.Checked)
                     {
-                        int signal = ***REMOVED***Client.GetSignal();
+                        int signal = ubntClient.GetSignal();
                         //cirPbSignal.Value = signal + 100;
                         lblSignal.Text = signal.ToString();
                     }
 
                     if (swNoise.Checked)
                     {
-                        int noise = ***REMOVED***Client.GetNoiseFloor();
+                        int noise = ubntClient.GetNoiseFloor();
                         //cirPbNoise.Value = noise + 100;
                         lblNoise.Text = noise.ToString();
                     }
 
                     if (swCCQ.Checked)
                     {
-                        int ccq = ***REMOVED***Client.GetTransmitCCQ();
+                        int ccq = ubntClient.GetTransmitCCQ();
                         //cirPbCCQ.Value = ccq;
                         lblCCQ.Text = ccq.ToString();
                     }
@@ -189,15 +200,15 @@ namespace UbntClient
         //---------------------------------
         private void GetStatus()
         {
-            lblBaseSSID.Text = ***REMOVED***Client.GetBaseSSID();
-            lblApMac.Text = ***REMOVED***Client.GetApMAC();
-            lblWlanIPAddress.Text = ***REMOVED***Client.GetWlanIpAddress();
-            lblFrequency.Text = ***REMOVED***Client.GetFrequency() + " MHz";
-            lblChannel.Text = ***REMOVED***Client.GetChannel();
-            lblACKTimeout.Text = ***REMOVED***Client.GetAckTimeout();
-            lblTxRate.Text = ***REMOVED***Client.GetTxRate() + " Mbps";
-            lblRxRate.Text = ***REMOVED***Client.GetRxRate() + " Mbps";
-            lblUptime.Text = ***REMOVED***Client.GetUptimeFormatted();
+            lblBaseSSID.Text = ubntClient.GetBaseSSID();
+            lblApMac.Text = ubntClient.GetApMAC();
+            lblWlanIPAddress.Text = ubntClient.GetWlanIpAddress();
+            lblFrequency.Text = ubntClient.GetFrequency() + " MHz";
+            lblChannel.Text = ubntClient.GetChannel();
+            lblACKTimeout.Text = ubntClient.GetAckTimeout();
+            lblTxRate.Text = ubntClient.GetTxRate() + " Mbps";
+            lblRxRate.Text = ubntClient.GetRxRate() + " Mbps";
+            lblUptime.Text = ubntClient.GetUptimeFormatted();
         }
     }
 }

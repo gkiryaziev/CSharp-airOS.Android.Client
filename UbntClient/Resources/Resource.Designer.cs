@@ -72,11 +72,11 @@ namespace UbntClient
 			// aapt resource value: 0x7f060001
 			public const int btnDisconnect = 2131099649;
 			
+			// aapt resource value: 0x7f060017
+			public const int btnSave = 2131099671;
+			
 			// aapt resource value: 0x7f060002
 			public const int btnSettings = 2131099650;
-			
-			// aapt resource value: 0x7f060012
-			public const int button1 = 2131099666;
 			
 			// aapt resource value: 0x7f060008
 			public const int lblACKTimeout = 2131099656;
@@ -122,6 +122,21 @@ namespace UbntClient
 			
 			// aapt resource value: 0x7f06000c
 			public const int swSignal = 2131099660;
+			
+			// aapt resource value: 0x7f060012
+			public const int txtHost = 2131099666;
+			
+			// aapt resource value: 0x7f060016
+			public const int txtInterval = 2131099670;
+			
+			// aapt resource value: 0x7f060014
+			public const int txtLogin = 2131099668;
+			
+			// aapt resource value: 0x7f060015
+			public const int txtPassword = 2131099669;
+			
+			// aapt resource value: 0x7f060013
+			public const int txtPort = 2131099667;
 			
 			static Id()
 			{
