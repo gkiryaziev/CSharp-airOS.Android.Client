@@ -6,7 +6,7 @@ namespace UbntClient
 {
     [Activity(
         Label = "@string/settingsActivity",
-        Icon = "@drawable/WiFi",
+        Icon = "@drawable/Settings",
         Theme = "@style/MyCustomTheme",
         ScreenOrientation = ScreenOrientation.Portrait)]
     public class SettingsActivity : Activity

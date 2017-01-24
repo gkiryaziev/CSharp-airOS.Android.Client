@@ -88,6 +88,19 @@ namespace UbntClient
             }
 
             sshClient.Close();
+
+            lblBaseSSID.Text = "";
+            lblApMac.Text = "";
+            lblWlanIPAddress.Text = "";
+            lblFrequency.Text = "";
+            lblChannel.Text = "";
+            lblACKTimeout.Text = "";
+            lblTxRate.Text = "";
+            lblRxRate.Text = "";
+            lblUptime.Text = "";
+            lblSignal.Text = "";
+            lblNoise.Text = "";
+            lblCCQ.Text = "";
         }
 
         //---------------------------------
